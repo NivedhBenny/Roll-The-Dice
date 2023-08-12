@@ -22,22 +22,22 @@ function rollDice(randomNumber,thisImage){
     return;
 }
 
-var randomNumber1 = Math.floor(Math.random() * 6 +1);
-randomNumber1;
+document.querySelector(".btn").addEventListener("click",rollAgain);
 
-rollDice(randomNumber1,".img1");
+function rollAgain(){
+    document.querySelector(".btn").innerHTML="Roll Again";
+    var randomNumber1 = Math.floor(Math.random() * 6 +1);
+    rollDice(randomNumber1,".img1");
 
+    var randomNumber2 = Math.floor(Math.random() * 6 +1);
+    rollDice(randomNumber2,".img2");
 
-var randomNumber2 = Math.floor(Math.random() * 6 +1);
-randomNumber2;
-rollDice(randomNumber2,".img2");
-
-
-if(randomNumber1 > randomNumber2){
-    document.querySelector("h1").innerHTML = "Player 1 Wins!";
-}else if(randomNumber1 < randomNumber2){
-    document.querySelector("h1").innerHTML="Player 2 Wins!";
-}
-else{
-    document.querySelector("h1").innerHTML="Draw!";
+    if(randomNumber1 > randomNumber2){
+        document.querySelector("h1").innerHTML = "Player 1 Wins!";
+    }else if(randomNumber1 < randomNumber2){
+        document.querySelector("h1").innerHTML="Player 2 Wins!";
+    }
+    else{
+        document.querySelector("h1").innerHTML="Draw!";
+    }
 }
